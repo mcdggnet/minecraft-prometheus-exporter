@@ -20,6 +20,7 @@ public class TickDurationAverageCollector extends Metric {
     private long getTickDurationAverage() {
         long sum = 0;
         long[] durations = collector.getTickDurations();
+        if (durations.length == 0) return 0;
         for (Long val : durations) {
             sum += val;
         }
